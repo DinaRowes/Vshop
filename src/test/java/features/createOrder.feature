@@ -1,5 +1,8 @@
 Feature: As a user i can order from the Shop
 
+  Background:
+    Given The driver is initialized
+
   @ui
   Scenario Outline: Verify the user cannot order with empty mandatory data
     Given I am a non-registered customer

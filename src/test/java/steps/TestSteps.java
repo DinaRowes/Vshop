@@ -1,5 +1,6 @@
 package steps;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -28,11 +29,18 @@ public class TestSteps extends AbstractTestNGCucumberTests {
     public static WebDriver driver;
     Response response;
 
-    @Given("I am a non-registered customer")
-    public void iAmANonRegisteredCustomer() {
-        // init driver
+    @After
+    public void tearDown(){
+        driver.quit();
+    }
+
+    @Given("The driver is initialized")
+    public void theDriverIsInitialized() {
         startDriver();
     }
+
+    @Given("I am a non-registered customer")
+    public void iAmANonRegisteredCustomer() {}
 
     @And("I navigate to {string}")
     public void iNavigateToHomePage(String url) {
@@ -81,8 +89,8 @@ public class TestSteps extends AbstractTestNGCucumberTests {
 
     @And("I select the delivery area {string}")
     public void iSelectTheDeliveryArea(String area) {
-        WebElement cityList = driver.findElements(By.tagName("select")).get(1);
-        Select select = new Select(cityList);
+        WebElement areaList = driver.findElements(By.tagName("select")).get(1);
+        Select select = new Select(areaList);
         select.selectByVisibleText(area);
     }
 
@@ -126,11 +134,10 @@ public class TestSteps extends AbstractTestNGCucumberTests {
         String nameErrorMsg = driver.findElements(By.xpath("//div[@class=\"help-block alertComp\"]//div")).get(0).getText();
         String mobileErrorMsg = driver.findElements(By.xpath("//div[@class=\"help-block alertComp\"]//div")).get(1).getText();
         String EmailErrorMsg = driver.findElements(By.xpath("//div[@class=\"help-block alertComp\"]//div")).get(2).getText();
+
         Assert.assertEquals(nameErrorMsg, "Please enter a valid name");
         Assert.assertEquals(mobileErrorMsg, "Please enter a valid Mobile Number e.g. 01*********");
         Assert.assertEquals(EmailErrorMsg, "Please enter a valid email address");
-
-        stopDriver();
     }
 
     @Given("I am a non-registered user")
@@ -167,9 +174,5 @@ public class TestSteps extends AbstractTestNGCucumberTests {
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-    }
-
-    public void stopDriver(){
-        driver.quit();
     }
 }
