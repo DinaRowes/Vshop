@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-10-14T15:42:16 EET" name="createOrder" finished-at="2022-10-14T15:42:47 EET" duration-ms="31712">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@6cdba6dc]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2022-10-14T15:42:16 EET" name="UI Regression Test" finished-at="2022-10-14T15:42:47 EET" duration-ms="31712">
+      <class name="runner.TestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner@6cdba6dc]" started-at="2022-10-14T15:42:16 EET" name="setUpClass" finished-at="2022-10-14T15:42:16 EET" duration-ms="466" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@7672960e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@6cdba6dc]" started-at="2022-10-14T15:42:16 EET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-14T15:42:45 EET" duration-ms="28880" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify the user cannot order with empty mandatory data"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[As a user i can order from the Shop]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@6cdba6dc]" started-at="2022-10-14T15:42:45 EET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-10-14T15:42:47 EET" duration-ms="2223" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Anyone can get post info by id"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[anonymous user can get post details by it's id]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner@6cdba6dc]" started-at="2022-10-14T15:42:47 EET" name="tearDownClass" finished-at="2022-10-14T15:42:47 EET" duration-ms="55" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- runner.TestRunner -->
+    </test> <!-- UI Regression Test -->
+  </suite> <!-- createOrder -->
+</testng-results>
